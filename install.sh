@@ -74,15 +74,9 @@ echo -e "${CYAN}Pulling qwen2.5-coder:1.5b (fastest model)...${RESET}"
 ollama pull qwen2.5-coder:1.5b
 
 # Ask about larger model
-if [ -t 0 ]; then
-    read -p "Would you like to pull deepseek-coder:6.7b (better quality, ~4GB)? [y/N] " -n 1 -r
-    echo ""
-    if [[ $REPLY =~ ^[Yy]$ ]]; then
-        ollama pull deepseek-coder:6.7b
-    fi
-else
-    echo "Skipping optional model download (run 'ollama pull deepseek-coder:6.7b' later)"
-fi
+echo ""
+echo -e "${CYAN}Optional: Pull deepseek-coder:6.7b for better quality (~4GB)?${RESET}"
+echo -e "Run later: ${BOLD}ollama pull deepseek-coder:6.7b${RESET}"
 
 echo ""
 echo -e "${GREEN}${BOLD}✅ AJax Code installed successfully!${RESET}"
