@@ -1,2 +1,0 @@
-[console_scripts]
-aj-code = aj_code.main:main
