@@ -74,11 +74,14 @@ echo -e "${CYAN}Pulling qwen2.5-coder:1.5b (fastest model)...${RESET}"
 ollama pull qwen2.5-coder:1.5b
 
 # Ask about larger model
-echo ""
-read -p "Would you like to pull deepseek-coder:6.7b (better quality, ~4GB)? [y/N] " -n 1 -r
-echo ""
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    ollama pull deepseek-coder:6.7b
+if [ -t 0 ]; then
+    read -p "Would you like to pull deepseek-coder:6.7b (better quality, ~4GB)? [y/N] " -n 1 -r
+    echo ""
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        ollama pull deepseek-coder:6.7b
+    fi
+else
+    echo "Skipping optional model download (run 'ollama pull deepseek-coder:6.7b' later)"
 fi
 
 echo ""
