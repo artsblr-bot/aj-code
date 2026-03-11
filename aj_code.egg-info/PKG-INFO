@@ -1,0 +1,86 @@
+Metadata-Version: 2.1
+Name: aj-code
+Version: 1.0.0
+Summary: Terminal-based AI coding agent — 100% local, no API keys needed
+Author: Aarav J
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# AJax Code
+
+> Terminal-based AI coding agent — 100% local, no API keys needed.
+
+**AJax Code** runs entirely on your machine using [Ollama](https://ollama.ai). No cloud, no subscriptions, no data leaving your computer.
+
+## Install
+
+### Linux / macOS
+```bash
+curl -fsSL https://raw.githubusercontent.com/aaravj/aj-code/main/install.sh | bash
+```
+
+### Windows (PowerShell)
+```powershell
+irm https://raw.githubusercontent.com/aaravj/aj-code/main/install.ps1 | iex
+```
+
+### Manual
+```bash
+git clone https://github.com/aaravj/aj-code
+cd aj-code
+bash install.sh
+```
+
+## Quick Start
+
+```bash
+aj-code
+```
+
+That's it. Ajax will detect your project and start helping.
+
+## Features
+
+- **4-tier model routing** — auto-selects the right model for task complexity
+- **Autonomous tool use** — reads, writes, edits files; runs git, terminal, web search
+- **Self-healing** — retries failed operations up to 5 times automatically
+- **Rolling context** — summarises old messages so you never hit limits
+- **Vector memory** — remembers past conversations and project decisions
+- **Session memory** — SQLite-backed, persists across restarts
+
+## Models
+
+| Tier | Model | RAM Required | Best For |
+|------|-------|-------------|---------|
+| Tier 1 | qwen2.5-coder:1.5b | < 6 GB | Quick fixes, simple questions |
+| Tier 2 | deepseek-coder:6.7b | 6–15 GB | Features, bug fixes |
+| Tier 3 | qwen2.5-coder:14b | 16–31 GB | Complex modules, architecture |
+| Tier 4 | qwen2.5-coder:32b | 32 GB+ | Full apps, system design |
+
+## Commands
+
+| Command | Description |
+|---------|-------------|
+| `/help` | Show all commands |
+| `/model` | Show installed models |
+| `/context` | Context usage % |
+| `/project` | Project summary |
+| `/undo` | Undo last file change |
+| `/diff` | Show session changes |
+| `/commit` | AI-generated git commit |
+| `/exit` | Exit |
+
+## Requirements
+
+- Python 3.8+
+- [Ollama](https://ollama.ai)
+- 4 GB+ RAM (8 GB recommended)
+- Linux, macOS, or Windows
+
+## License
+
+MIT © Aarav J
