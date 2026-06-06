@@ -8,17 +8,17 @@
 
 ### Linux / macOS
 ```bash
-curl -fsSL https://raw.githubusercontent.com/aaravj/aj-code/main/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/artsblr-bot/aj-code/main/install.sh | bash
 ```
 
 ### Windows (PowerShell)
 ```powershell
-irm https://raw.githubusercontent.com/aaravj/aj-code/main/install.ps1 | iex
+irm https://raw.githubusercontent.com/artsblr-bot/aj-code/main/install.ps1 | iex
 ```
 
 ### Manual
 ```bash
-git clone https://github.com/aaravj/aj-code
+git clone https://github.com/artsblr-bot/aj-code
 cd aj-code
 bash install.sh
 ```

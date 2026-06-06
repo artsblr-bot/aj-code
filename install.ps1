@@ -30,7 +30,13 @@ pip install rich prompt-toolkit pyfiglet ollama duckduckgo-search `
 
 # Install aj-code
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
-pip install -e $scriptDir
+if (Test-Path "$scriptDir/setup.py") {
+    Write-Host "Installing aj-code from source..." -ForegroundColor Cyan
+    pip install -e $scriptDir
+} else {
+    Write-Host "Installing aj-code from GitHub..." -ForegroundColor Cyan
+    pip install git+https://github.com/artsblr-bot/aj-code.git
+}
 
 # Pull model
 Write-Host "Pulling qwen2.5-coder:1.5b..." -ForegroundColor Cyan

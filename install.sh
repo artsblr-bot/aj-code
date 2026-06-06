@@ -61,11 +61,14 @@ pip3 install rich prompt-toolkit pyfiglet ollama duckduckgo-search \
     gitpython chromadb psutil requests pathspec tiktoken \
     --break-system-packages --quiet
 
-# Install aj-code from local directory (or pip when published)
+# Install aj-code from local directory (or git if piped)
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 if [ -f "$SCRIPT_DIR/setup.py" ]; then
     echo -e "${CYAN}Installing aj-code from source...${RESET}"
     pip3 install -e "$SCRIPT_DIR" --break-system-packages --quiet
+else
+    echo -e "${CYAN}Installing aj-code from GitHub...${RESET}"
+    pip3 install git+https://github.com/artsblr-bot/aj-code.git --break-system-packages --quiet
 fi
 
 # Pull smallest model automatically
